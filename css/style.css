@@ -1,0 +1,279 @@
+.product-container{
+    display: grid;
+}
+:root {
+	--primary-color: #cc0000;
+	--secondary-color: #7c0000;
+}
+
+html,
+body {
+	/* https://css-tricks.com/couple-takes-sticky-footer/ */
+	height: 100%;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+
+/* For sticky footer - grow to fill the space */
+.content {
+	flex: 1 0 auto;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+	overflow: none;
+	padding: 10px;
+}
+
+.app-header {
+	background: var(--primary-color);
+	box-shadow: 3px 3px 10px #888888;
+}
+
+.app-header .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* justify-content: space-between; */
+	justify-content: center;
+	padding: 15px 10px;
+}
+
+.app-header .logo {
+	width: 170px;
+	margin-bottom: 1rem;
+}
+
+.app-header input[type='text'] {
+	padding: 7px;
+	border: #777;
+	width: 300px;
+	border-radius: 3px;
+}
+
+.subheader {
+	background: var(--secondary-color);
+	color: #fff;
+	box-shadow: 3px 3px 10px #888888;
+	font-size: 14px;
+	padding: 10px;
+	width: 90%;
+	margin: 0 auto 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.subheader p {
+	margin: 4px;
+}
+
+.subheader img {
+	width: 40px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10px;
+}
+
+.grid .item {
+	display: flex;
+	flex-direction: column;
+	border: 1px #ccc solid;
+	padding: 10px;
+	box-shadow: 1px 1px 2px #ccc;
+}
+
+.grid .item h4 {
+	margin-bottom: 5px;
+}
+
+.grid .item p {
+	font-size: 14px;
+	color: var(--secondary-color);
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.grid .item img {
+	width: 30px;
+	text-align: right;
+	display: block;
+	align-self: flex-end;
+}
+
+.app-footer {
+	flex-shrink: 0;
+	background: #f4f4f4;
+	color: #444;
+	padding: 10px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+.app-footer ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.app-footer ul li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.app-footer ul li i {
+	font-size: 22px;
+}
+
+/* Splash */
+#splash {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: var(--primary-color);
+	height: 100vh;
+	width: 100%;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+#splash img {
+	width: 300px;
+}
+
+#splash.fade {
+	opacity: 0;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+	.grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.grid .item img {
+		width: 60px;
+	}
+}
+/* estilos de slider  */
+@media(max-width: 768px){
+	#home .container {
+
+	}
+}
+html,
+body {
+position: relative;
+height: 100%;
+}
+
+body {
+background: #eee;
+font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size: 14px;
+color: #000;
+margin: 0;
+padding: 0;
+}
+
+.swiper {
+width: 70%;
+float: left;
+height: 40%;
+}
+
+.swiper-slide {
+text-align: center;
+font-size: 18px;
+background: #fff;
+
+/* Center slide text vertically */
+display: -webkit-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+-webkit-justify-content: center;
+justify-content: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+-webkit-align-items: center;
+align-items: center;
+}
+
+.swiper-slide img {
+display: block;
+width: 100%;
+height: 400px;
+object-fit: contain;
+}
+
+.circle {
+width: 45px;
+height: 45px;
+background: rgb(225, 183, 84);
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+border-radius: 50px;
+position: absolute;
+}
+
+.circle::before, .circle::after {
+content:"";
+position:absolute;
+top: 50%;
+left: 50%;
+transform:translate(-50%, -50%);
+width: 70px;
+height: 70px;
+border: 10px solid rgba(128, 128, 128, 0.281);
+border-radius:100%;
+animation: latido linear 3s infinite;
+}
+
+.circle::after {
+animation-delay: -1.5s;
+}
+
+@keyframes latido {
+0% { width:70px; height:70px; border:10px solid rgba(128, 128, 128, 0.326); }
+100% { width:120px; height:120px; border:10px solid transparent; }
+}
+
+.icono {
+position: absolute;
+width: 42px;
+height: 42px;
+padding-top: -150%;
+padding-left:-50%;
+z-index: 99;
+
+}
+
+#button-0 { top: 50%; left:50%; }
+
+.modal1 {
+	width: 30%;
+	float: right;
+}
